@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      
+      <link type="text/css" rel="stylesheet" href="css/style.css?_ver=1.0.2"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+			<link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    </head>
+
+    <body>
+      <div id="container" class="center-align">
+      	<div id="dvHeader" class="valign-wrapper">
+      		<img src="./img/champions-league-logo2.jpg" />
+      		<span>2016-2017 UEFA Champion League</span>
+      	</div>
+      	
+      	<div id="dvEntry">
+      		<div class="row center-align rowYourEntries" style="width: 100%; padding-bottom: 20px; border-bottom: 1px dotted #ddd">
+  				<div class="col s4 dvLabel" style="color: #00897b"><i class="small material-icons">visibility</i>All Entries</div>
+  				<div class="col s6 dvSelect">
+  					<select id="sel-entry" class="browser-default">
+      				</select>
+  				</div>
+  				<div class="col s2 dvPoint">
+  					<a id="btnRank" class="waves-effect waves-light btn"><i class="material-icons left">trending_up</i>Ranking
+  						<span class="badge">0</span>
+  					</a>
+  				</div>
+  			</div>
+      		
+      		<div id="dvChoice" >
+      			<div class="row center-align rowCat0" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 1</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat0" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat0Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat1" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 2</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat1" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>	
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat1Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat2" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 3</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat2" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>	
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat2Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat3" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 4</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat3" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat3Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat4" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 5</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat4" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat4Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat5" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 6</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat5" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat5Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat5" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 7</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat6" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat6Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowCat5" style="width: 100%">
+      				<div class="col s4 dvLabel">Your Rank 8</div>
+      				<div class="col s6 dvSelect">
+      					<select id="sel-cat7" class="browser-default">
+      						<option value="ZZ">Choice One</option>
+      						<option value="AE">Atlético Madrid</option>
+      						<option value="BA">Barcelona</option>
+      						<option value="BM">Bayern Munich</option>
+      						<option value="DO">Dortmund</option>
+      						<option value="JU">Juventus</option>
+      						<option value="LC">Leicester City</option>
+      						<option value="MO">Monaco</option>
+      						<option value="RM">Real Madrid</option>
+      					</select>
+      				</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="cat7Point" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      			
+      			<div class="row center-align rowTotal" style="width: 100%; padding-bottom: 20px; border-bottom: 1px dotted #ddd">
+      				<div class="col s4 dvLabel"><i class="small material-icons">stars</i></div>
+      				<div class="col s6 dvLabel">Total</div>
+      				<div class="col s2 dvPoint">
+      					<input value="0" id="totalPoint" type="text" readonly style="text-align: center">
+      				</div>
+      			</div>
+      		</div>	
+      	</div>	
+      	
+      	<div id="funcBar1">
+      		<a id="btnCalc" class="waves-effect waves-light btn-large"><i class="material-icons left">done</i>Shoot</a>
+      		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      		<a id="btnReset" class="waves-effect waves-light btn-large"><i class="material-icons left">reply</i>Reset</a>
+      	</div>
+      	
+      	<div id="funcBar2">
+      		<div class="row center-align" style="width: 100%">
+	      		<div class="col s2">
+	      			<a id="btnSave" class="waves-effect waves-light btn" style="margin-right: 20px"><i class="material-icons left">thumb_up</i>Save</a>
+	      		</div>
+	      		<div class="col s8">   
+	      		    <input value="" id="inputEntryName" type="text" placeholder="Save current shoot as your entry, please type the name of the entry">
+	      		</div>
+	      		<div class="col s2">
+	      			<a id="btnDele" class="waves-effect waves-light btn"><i class="material-icons left">delete</i>Remove</a>
+	      		</div>
+      		</div>
+      	</div>
+      </div>	
+    	
+    	
+    	
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/app.js?_ver=2.2.3"></script>
+    </body>
+</html>

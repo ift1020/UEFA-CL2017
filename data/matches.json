@@ -1,0 +1,716 @@
+﻿[
+  {
+    "teamName": "France",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Romania"
+  },
+  {
+    "teamName": "Romania",
+    "round": 0,
+    "result": "l",
+    "score": 1,
+    "rival": "France"
+  },
+  {
+    "teamName": "Switzerland",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Albania"
+  },
+  {
+    "teamName": "Albania",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Switzerland"
+  },
+  {
+    "teamName": "Wales",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Slovakia"
+  },
+  {
+    "teamName": "Slovakia",
+    "round": 0,
+    "result": "l",
+    "score": 1,
+    "rival": "Wales"
+  },
+  {
+    "teamName": "England",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Russia"
+  },
+  {
+    "teamName": "Russia",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "England"
+  },
+  {
+    "teamName": "Turkey",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Croatia"
+  },
+  {
+    "teamName": "Croatia",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Turkey"
+  },
+  {
+    "teamName": "Poland",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "N_Ireland"
+  },
+  {
+    "teamName": "N_Ireland",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Poland"
+  },
+  {
+    "teamName": "Germany",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Ukraine"
+  },
+  {
+    "teamName": "Ukraine",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Germany"
+  },
+  {
+    "teamName": "Spain",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Czech"
+  },
+  {
+    "teamName": "Czech",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Spain"
+  },
+  {
+    "teamName": "R_Ireland",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Sweden"
+  },
+  {
+    "teamName": "Sweden",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "R_Ireland"
+  },
+  {
+    "teamName": "Belgium",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Italy"
+  },
+  {
+    "teamName": "Italy",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Belgium"
+  },
+  {
+    "teamName": "Austria",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Hungary"
+  },
+  {
+    "teamName": "Hungary",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Austria"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Iceland"
+  },
+  {
+    "teamName": "Iceland",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Portugal"
+  },
+  {
+    "teamName": "Russia",
+    "round": 0,
+    "result": "l",
+    "score": 1,
+    "rival": "Slovakia"
+  },
+  {
+    "teamName": "Slovakia",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Russia"
+  },
+  {
+    "teamName": "Romania",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Switzerland"
+  },
+  {
+    "teamName": "Switzerland",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Romania"
+  },
+  {
+    "teamName": "France",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Albania"
+  },
+  {
+    "teamName": "Albania",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "France"
+  },
+  {
+    "teamName": "England",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Wales"
+  },
+  {
+    "teamName": "Wales",
+    "round": 0,
+    "result": "l",
+    "score": 1,
+    "rival": "England"
+  },
+  {
+    "teamName": "Ukraine",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "N_Ireland"
+  },
+  {
+    "teamName": "N_Ireland",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Ukraine"
+  },
+  {
+    "teamName": "Germany",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "Poland"
+  },
+  {
+    "teamName": "Poland",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "Germany"
+  },
+  {
+    "teamName": "Italy",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Sweden"
+  },
+  {
+    "teamName": "Sweden",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Italy"
+  },
+  {
+    "teamName": "Czech",
+    "round": 0,
+    "result": "t",
+    "score": 2,
+    "rival": "Croatia"
+  },
+  {
+    "teamName": "Croatia",
+    "round": 0,
+    "result": "t",
+    "score": 2,
+    "rival": "Czech"
+  },
+  {
+    "teamName": "Spain",
+    "round": 0,
+    "result": "w",
+    "score": 3,
+    "rival": "Turkey"
+  },
+  {
+    "teamName": "Turkey",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Spain"
+  },
+  {
+    "teamName": "Belgium",
+    "round": 0,
+    "result": "w",
+    "score": 3,
+    "rival": "R_Ireland"
+  },
+  {
+    "teamName": "R_Ireland",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Belgium"
+  },
+  {
+    "teamName": "Iceland",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Hungary"
+  },
+  {
+    "teamName": "Hungary",
+    "round": 0,
+    "result": "t",
+    "score": 1,
+    "rival": "Iceland"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "Austria"
+  },
+  {
+    "teamName": "Austria",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "Portugal"
+  },
+  {
+    "teamName": "Switzerland",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "France"
+  },
+  {
+    "teamName": "France",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "Switzerland"
+  },
+  {
+    "teamName": "Romania",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Albania"
+  },
+  {
+    "teamName": "Albania",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Romania"
+  },
+  {
+    "teamName": "Slovakia",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "England"
+  },
+  {
+    "teamName": "England",
+    "round": 0,
+    "result": "t",
+    "score": 0,
+    "rival": "Slovakia"
+  },
+  {
+    "teamName": "Russia",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Wales"
+  },
+  {
+    "teamName": "Wales",
+    "round": 0,
+    "result": "w",
+    "score": 3,
+    "rival": "Russia"
+  },
+  {
+    "teamName": "N_Ireland",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Germany"
+  },
+  {
+    "teamName": "Germany",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "N_Ireland"
+  },
+  {
+    "teamName": "Ukraine",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Poland"
+  },
+  {
+    "teamName": "Poland",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Ukraine"
+  },
+  {
+    "teamName": "Croatia",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Spain"
+  },
+  {
+    "teamName": "Spain",
+    "round": 0,
+    "result": "l",
+    "score": 1,
+    "rival": "Croatia"
+  },
+  {
+    "teamName": "Czech",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Turkey"
+  },
+  {
+    "teamName": "Turkey",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Czech"
+  },
+  {
+    "teamName": "Hungary",
+    "round": 0,
+    "result": "t",
+    "score": 3,
+    "rival": "Portugal"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 0,
+    "result": "t",
+    "score": 3,
+    "rival": "Hungary"
+  },
+  {
+    "teamName": "Iceland",
+    "round": 0,
+    "result": "w",
+    "score": 2,
+    "rival": "Austria"
+  },
+  {
+    "teamName": "Austria",
+    "round": 0,
+    "result": "l",
+    "score": 1,
+    "rival": "Iceland"
+  },
+  {
+    "teamName": "Italy",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "R_Ireland"
+  },
+  {
+    "teamName": "R_Ireland",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Italy"
+  },
+  {
+    "teamName": "Sweden",
+    "round": 0,
+    "result": "l",
+    "score": 0,
+    "rival": "Belgium"
+  },
+  {
+    "teamName": "Belgium",
+    "round": 0,
+    "result": "w",
+    "score": 1,
+    "rival": "Sweden"
+  },
+  {
+    "teamName": "Switzerland",
+    "round": 1,
+    "result": "t",
+    "score": 1,
+    "rival": "Poland"
+  },
+  {
+    "teamName": "Poland",
+    "round": 1,
+    "result": "w",
+    "score": 2,
+    "rival": "Switzerland"
+  },
+  {
+    "teamName": "Wales",
+    "round": 1,
+    "result": "w",
+    "score": 1,
+    "rival": "N_Ireland"
+  },
+  {
+    "teamName": "N_Ireland",
+    "round": 1,
+    "result": "l",
+    "score": 0,
+    "rival": "Wales"
+  },
+  {
+    "teamName": "Croatia",
+    "round": 1,
+    "result": "t",
+    "score": 0,
+    "rival": "Portugal"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 1,
+    "result": "w",
+    "score": 1,
+    "rival": "Croatia"
+  },
+  {
+    "teamName": "France",
+    "round": 1,
+    "result": "w",
+    "score": 1,
+    "rival": "R_Ireland"
+  },
+  {
+    "teamName": "R_Ireland",
+    "round": 1,
+    "result": "l",
+    "score": 1,
+    "rival": "France"
+  },
+  {
+    "teamName": "Germany",
+    "round": 1,
+    "result": "w",
+    "score": 3,
+    "rival": "Slovakia"
+  },
+  {
+    "teamName": "Slovakia",
+    "round": 1,
+    "result": "l",
+    "score": 0,
+    "rival": "Germany"
+  },
+  {
+    "teamName": "Hungary",
+    "round": 1,
+    "result": "l",
+    "score": 0,
+    "rival": "Belgium"
+  },
+  {
+    "teamName": "Belgium",
+    "round": 1,
+    "result": "w",
+    "score": 4,
+    "rival": "Hungary"
+  },
+  {
+    "teamName": "Italy",
+    "round": 1,
+    "result": "w",
+    "score": 2,
+    "rival": "Spain"
+  },
+  {
+    "teamName": "Spain",
+    "round": 1,
+    "result": "l",
+    "score": 0,
+    "rival": "Italy"
+  },
+  {
+    "teamName": "England",
+    "round": 1,
+    "result": "l",
+    "score": 1,
+    "rival": "Iceland"
+  },
+  {
+    "teamName": "Iceland",
+    "round": 1,
+    "result": "w",
+    "score": 2,
+    "rival": "England"
+  },
+  {
+    "teamName": "Poland",
+    "round": 2,
+    "result": "t",
+    "score": 1,
+    "rival": "Portugal"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 2,
+    "result": "w",
+    "score": 2,
+    "rival": "Poland"
+  },
+  {
+    "teamName": "Wales",
+    "round": 2,
+    "result": "w",
+    "score": 3,
+    "rival": "Belgium"
+  },
+  {
+    "teamName": "Belgium",
+    "round": 2,
+    "result": "l",
+    "score": 1,
+    "rival": "Wales"
+  },
+  {
+    "teamName": "Germany",
+    "round": 2,
+    "result": "w",
+    "score": 2,
+    "rival": "Italy"
+  },
+  {
+    "teamName": "Italy",
+    "round": 2,
+    "result": "t",
+    "score": 1,
+    "rival": "Germany"
+  },
+  {
+    "teamName": "France",
+    "round": 2,
+    "result": "w",
+    "score": 5,
+    "rival": "Iceland"
+  },
+  {
+    "teamName": "Iceland",
+    "round": 2,
+    "result": "l",
+    "score": 2,
+    "rival": "France"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 3,
+    "result": "w",
+    "score": 2,
+    "rival": "Wales"
+  },
+  {
+    "teamName": "Wales",
+    "round": 3,
+    "result": "l",
+    "score": 0,
+    "rival": "Portugal"
+  },
+  {
+    "teamName": "Germany",
+    "round": 3,
+    "result": "l",
+    "score": 0,
+    "rival": "France"
+  },
+  {
+    "teamName": "France",
+    "round": 3,
+    "result": "w",
+    "score": 2,
+    "rival": "Germany"
+  },
+  {
+    "teamName": "Portugal",
+    "round": 4,
+    "result": "w",
+    "score": 1,
+    "rival": "France"
+  },
+  {
+    "teamName": "France",
+    "round": 4,
+    "result": "l",
+    "score": 0,
+    "rival": "Portugal"
+  }
+]
