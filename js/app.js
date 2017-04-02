@@ -1,11 +1,11 @@
 ﻿var epool = epool || {};
 
-var teamsJson = '[{"category":1,"teams":[{"name":"Belgium","rank":2},{"name":"Germany","rank":4},{"name":"Spain","rank":6},{"name":"France","rank":17}]},{"category":2,"teams":[{"name":"Portugal","rank":8},{"name":"Austria","rank":10},{"name":"England","rank":11},{"name":"Italy","rank":12},{"name":"Switzerland","rank":15}]},{"category":3,"teams":[{"name":"Turkey","rank":18},{"name":"Ukraine","rank":19},{"name":"Hungary","rank":20},{"name":"Romania","rank":22},{"name":"Poland","rank":27},{"name":"Croatia","rank":27}]},{"category":4,"teams":[{"name":"N_Ireland","rank":25},{"name":"Wales","rank":26},{"name":"Russia","rank":29},{"name":"Czech","rank":30},{"name":"Sweden","rank":35}]},{"category":5,"teams":[{"name":"Slovakia","rank":24},{"name":"R_Ireland","rank":33},{"name":"Iceland","rank":34},{"name":"Albania","rank":42}]}]',
-	policyJson = '[{"category":1,"policy":[{"round":0,"point":{"w":3,"t":1}},{"round":1,"point":{"w":4,"t":1}},{"round":2,"point":{"w":5,"t":2}},{"round":3,"point":{"w":6,"t":2}},{"round":4,"point":{"w":8,"t":2}}]},{"category":2,"policy":[{"round":0,"point":{"w":4,"t":1}},{"round":1,"point":{"w":5,"t":2}},{"round":2,"point":{"w":6,"t":2}},{"round":3,"point":{"w":8,"t":3}},{"round":4,"point":{"w":10,"t":3}}]},{"category":3,"policy":[{"round":0,"point":{"w":5,"t":1}},{"round":1,"point":{"w":7,"t":2}},{"round":2,"point":{"w":9,"t":3}},{"round":3,"point":{"w":12,"t":4}},{"round":4,"point":{"w":15,"t":5}}]},{"category":4,"policy":[{"round":0,"point":{"w":6,"t":2}},{"round":1,"point":{"w":8,"t":3}},{"round":2,"point":{"w":11,"t":4}},{"round":3,"point":{"w":14,"t":5}},{"round":4,"point":{"w":20,"t":6}}]},{"category":5,"policy":[{"round":0,"point":{"w":8,"t":3}},{"round":1,"point":{"w":10,"t":4}},{"round":2,"point":{"w":14,"t":6}},{"round":3,"point":{"w":18,"t":7}},{"round":4,"point":{"w":25,"t":10}}]}]';
+var teamsJson = '[{"code":"AM","name":"Atlético Madrid"},{"code":"BA","name":"Barcelona"},{"code":"BM","name":"Bayern Munich"},{"code":"DO","name":"Dortmund"},{"code":"JU","name":"Juventus"},{"code":"LC","name":"Leicester City"},{"code":"MO","name":"Monaco"},{"code":"RM","name":"Real Madrid"}]',
+	policyJson = '[{"round":0,"point":{"w":2,"t":1,"l":0}},{"round":1,"point":{"w":2,"t":1,"l":0}},{"round":2,"point":{"w":2,"t":1,"l":0}}]';
 
-var matchesJson = '[{"teamName":"France","round":0,"result":"w","score":2,"rival":"Romania"},{"teamName":"Romania","round":0,"result":"l","score":1,"rival":"France"},{"teamName":"Switzerland","round":0,"result":"w","score":1,"rival":"Albania"},{"teamName":"Albania","round":0,"result":"l","score":0,"rival":"Switzerland"},{"teamName":"Wales","round":0,"result":"w","score":2,"rival":"Slovakia"},{"teamName":"Slovakia","round":0,"result":"l","score":1,"rival":"Wales"},{"teamName":"England","round":0,"result":"t","score":1,"rival":"Russia"},{"teamName":"Russia","round":0,"result":"t","score":1,"rival":"England"},{"teamName":"Turkey","round":0,"result":"l","score":0,"rival":"Croatia"},{"teamName":"Croatia","round":0,"result":"w","score":1,"rival":"Turkey"},{"teamName":"Poland","round":0,"result":"w","score":1,"rival":"N_Ireland"},{"teamName":"N_Ireland","round":0,"result":"l","score":0,"rival":"Poland"},{"teamName":"Germany","round":0,"result":"w","score":2,"rival":"Ukraine"},{"teamName":"Ukraine","round":0,"result":"l","score":0,"rival":"Germany"},{"teamName":"Spain","round":0,"result":"w","score":1,"rival":"Czech"},{"teamName":"Czech","round":0,"result":"l","score":0,"rival":"Spain"},{"teamName":"R_Ireland","round":0,"result":"t","score":1,"rival":"Sweden"},{"teamName":"Sweden","round":0,"result":"t","score":1,"rival":"R_Ireland"},{"teamName":"Belgium","round":0,"result":"l","score":0,"rival":"Italy"},{"teamName":"Italy","round":0,"result":"w","score":2,"rival":"Belgium"},{"teamName":"Austria","round":0,"result":"l","score":0,"rival":"Hungary"},{"teamName":"Hungary","round":0,"result":"w","score":2,"rival":"Austria"},{"teamName":"Portugal","round":0,"result":"t","score":1,"rival":"Iceland"},{"teamName":"Iceland","round":0,"result":"t","score":1,"rival":"Portugal"},{"teamName":"Russia","round":0,"result":"l","score":1,"rival":"Slovakia"},{"teamName":"Slovakia","round":0,"result":"w","score":2,"rival":"Russia"},{"teamName":"Romania","round":0,"result":"t","score":1,"rival":"Switzerland"},{"teamName":"Switzerland","round":0,"result":"t","score":1,"rival":"Romania"},{"teamName":"France","round":0,"result":"w","score":2,"rival":"Albania"},{"teamName":"Albania","round":0,"result":"l","score":0,"rival":"France"},{"teamName":"England","round":0,"result":"w","score":2,"rival":"Wales"},{"teamName":"Wales","round":0,"result":"l","score":1,"rival":"England"},{"teamName":"Ukraine","round":0,"result":"l","score":0,"rival":"N_Ireland"},{"teamName":"N_Ireland","round":0,"result":"w","score":2,"rival":"Ukraine"},{"teamName":"Germany","round":0,"result":"t","score":0,"rival":"Poland"},{"teamName":"Poland","round":0,"result":"t","score":0,"rival":"Germany"},{"teamName":"Italy","round":0,"result":"w","score":1,"rival":"Sweden"},{"teamName":"Sweden","round":0,"result":"l","score":0,"rival":"Italy"},{"teamName":"Czech","round":0,"result":"t","score":2,"rival":"Croatia"},{"teamName":"Croatia","round":0,"result":"t","score":2,"rival":"Czech"},{"teamName":"Spain","round":0,"result":"w","score":3,"rival":"Turkey"},{"teamName":"Turkey","round":0,"result":"l","score":0,"rival":"Spain"},{"teamName":"Belgium","round":0,"result":"w","score":3,"rival":"R_Ireland"},{"teamName":"R_Ireland","round":0,"result":"l","score":0,"rival":"Belgium"},{"teamName":"Iceland","round":0,"result":"t","score":1,"rival":"Hungary"},{"teamName":"Hungary","round":0,"result":"t","score":1,"rival":"Iceland"},{"teamName":"Portugal","round":0,"result":"t","score":0,"rival":"Austria"},{"teamName":"Austria","round":0,"result":"t","score":0,"rival":"Portugal"},{"teamName":"Switzerland","round":0,"result":"t","score":0,"rival":"France"},{"teamName":"France","round":0,"result":"t","score":0,"rival":"Switzerland"},{"teamName":"Romania","round":0,"result":"l","score":0,"rival":"Albania"},{"teamName":"Albania","round":0,"result":"w","score":1,"rival":"Romania"},{"teamName":"Slovakia","round":0,"result":"t","score":0,"rival":"England"},{"teamName":"England","round":0,"result":"t","score":0,"rival":"Slovakia"},{"teamName":"Russia","round":0,"result":"l","score":0,"rival":"Wales"},{"teamName":"Wales","round":0,"result":"w","score":3,"rival":"Russia"},{"teamName":"N_Ireland","round":0,"result":"l","score":0,"rival":"Germany"},{"teamName":"Germany","round":0,"result":"w","score":1,"rival":"N_Ireland"},{"teamName":"Ukraine","round":0,"result":"l","score":0,"rival":"Poland"},{"teamName":"Poland","round":0,"result":"w","score":1,"rival":"Ukraine"},{"teamName":"Croatia","round":0,"result":"w","score":2,"rival":"Spain"},{"teamName":"Spain","round":0,"result":"l","score":1,"rival":"Croatia"},{"teamName":"Czech","round":0,"result":"l","score":0,"rival":"Turkey"},{"teamName":"Turkey","round":0,"result":"w","score":2,"rival":"Czech"},{"teamName":"Hungary","round":0,"result":"t","score":3,"rival":"Portugal"},{"teamName":"Portugal","round":0,"result":"t","score":3,"rival":"Hungary"},{"teamName":"Iceland","round":0,"result":"w","score":2,"rival":"Austria"},{"teamName":"Austria","round":0,"result":"l","score":1,"rival":"Iceland"},{"teamName":"Italy","round":0,"result":"l","score":0,"rival":"R_Ireland"},{"teamName":"R_Ireland","round":0,"result":"w","score":1,"rival":"Italy"},{"teamName":"Sweden","round":0,"result":"l","score":0,"rival":"Belgium"},{"teamName":"Belgium","round":0,"result":"w","score":1,"rival":"Sweden"},{"teamName":"Switzerland","round":1,"result":"t","score":1,"rival":"Poland"},{"teamName":"Poland","round":1,"result":"w","score":2,"rival":"Switzerland"},{"teamName":"Wales","round":1,"result":"w","score":1,"rival":"N_Ireland"},{"teamName":"N_Ireland","round":1,"result":"l","score":0,"rival":"Wales"},{"teamName":"Croatia","round":1,"result":"t","score":0,"rival":"Portugal"},{"teamName":"Portugal","round":1,"result":"w","score":1,"rival":"Croatia"},{"teamName":"France","round":1,"result":"w","score":1,"rival":"R_Ireland"},{"teamName":"R_Ireland","round":1,"result":"l","score":1,"rival":"France"},{"teamName":"Germany","round":1,"result":"w","score":3,"rival":"Slovakia"},{"teamName":"Slovakia","round":1,"result":"l","score":0,"rival":"Germany"},{"teamName":"Hungary","round":1,"result":"l","score":0,"rival":"Belgium"},{"teamName":"Belgium","round":1,"result":"w","score":4,"rival":"Hungary"},{"teamName":"Italy","round":1,"result":"w","score":2,"rival":"Spain"},{"teamName":"Spain","round":1,"result":"l","score":0,"rival":"Italy"},{"teamName":"England","round":1,"result":"l","score":1,"rival":"Iceland"},{"teamName":"Iceland","round":1,"result":"w","score":2,"rival":"England"},{"teamName":"Poland","round":2,"result":"t","score":1,"rival":"Portugal"},{"teamName":"Portugal","round":2,"result":"w","score":2,"rival":"Poland"},{"teamName":"Wales","round":2,"result":"w","score":3,"rival":"Belgium"},{"teamName":"Belgium","round":2,"result":"l","score":1,"rival":"Wales"},{"teamName":"Germany","round":2,"result":"w","score":2,"rival":"Italy"},{"teamName":"Italy","round":2,"result":"t","score":1,"rival":"Germany"},{"teamName":"France","round":2,"result":"w","score":5,"rival":"Iceland"},{"teamName":"Iceland","round":2,"result":"l","score":2,"rival":"France"},{"teamName":"Portugal","round":3,"result":"w","score":2,"rival":"Wales"},{"teamName":"Wales","round":3,"result":"l","score":0,"rival":"Portugal"},{"teamName":"Germany","round":3,"result":"l","score":0,"rival":"France"},{"teamName":"France","round":3,"result":"w","score":2,"rival":"Germany"},{"teamName":"Portugal","round":4,"result":"w","score":1,"rival":"France"},{"teamName":"France","round":4,"result":"l","score":0,"rival":"Portugal"}]';
+var matchesJson = '[{"teamName":"BA","round":0,"result":"w","score":2,"rival":"JU"},{"teamName":"JU","round":0,"result":"l","score":1,"rival":"BA"}]';
 
-var allEntriesJson = '[{"id":0,"name":"Billy Chau","t0":"Germany","p0":6,"t1":"France","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Sweden","p4":2,"t5":"Spain","p5":3,"pp":20},{"id":1,"name":"David Zhang","t0":"France","p0":6,"t1":"Belgium","p1":0,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Portugal","p5":0,"pp":18},{"id":2,"name":"Albert Li #1","t0":"Germany","p0":6,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Turkey","p3":0,"t4":"Wales","p4":6,"t5":"Belgium","p5":0,"pp":16},{"id":3,"name":"Albert Li #2","t0":"England","p0":2,"t1":"Germany","p1":3,"t2":"Italy","p2":4,"t3":"Romania","p3":0,"t4":"Wales","p4":6,"t5":"Spain","p5":3,"pp":18},{"id":4,"name":"Albert Li #3","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"England","p2":1,"t3":"Turkey","p3":0,"t4":"Sweden","p4":2,"t5":"Spain","p5":3,"pp":15},{"id":5,"name":"Albert Li #4","t0":"Germany","p0":6,"t1":"France","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Iceland","p4":0,"t5":"Portugal","p5":0,"pp":15},{"id":6,"name":"Henry Kwok #1","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"England","p2":1,"t3":"Croatia","p3":5,"t4":"R_Ireland","p4":3,"t5":"Spain","p5":3,"pp":21},{"id":7,"name":"Henry Kwok #2","t0":"Germany","p0":6,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Ukraine","p3":0,"t4":"R_Ireland","p4":3,"t5":"Belgium","p5":0,"pp":13},{"id":8,"name":"Henry Kwok #3","t0":"Spain","p0":6,"t1":"France","p1":3,"t2":"Portugal","p2":0,"t3":"Poland","p3":5,"t4":"Slovakia","p4":0,"t5":"Belgium","p5":0,"pp":14},{"id":9,"name":"Henry Kwok #4","t0":"England","p0":2,"t1":"Germany","p1":3,"t2":"Italy","p2":4,"t3":"Croatia","p3":5,"t4":"R_Ireland","p4":3,"t5":"France","p5":3,"pp":20},{"id":10,"name":"Peter Cheung","t0":"Germany","p0":6,"t1":"France","p1":3,"t2":"Italy","p2":4,"t3":"Poland","p3":5,"t4":"Russia","p4":2,"t5":"Belgium","p5":0,"pp":20},{"id":11,"name":"Kenny Cheung #1","t0":"France","p0":6,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Belgium","p5":0,"pp":21},{"id":12,"name":"Kenny Cheung #2","t0":"England","p0":2,"t1":"France","p1":3,"t2":"Italy","p2":4,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Spain","p5":3,"pp":23},{"id":13,"name":"Kenny Cheung #3","t0":"Spain","p0":6,"t1":"France","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Belgium","p5":0,"pp":21},{"id":14,"name":"Kenny Cheung #4","t0":"Belgium","p0":0,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"France","p5":3,"pp":18},{"id":15,"name":"Dixon Fung #1","t0":"France","p0":6,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Belgium","p5":0,"pp":21},{"id":16,"name":"Dixon Fung #2","t0":"England","p0":2,"t1":"France","p1":3,"t2":"Italy","p2":4,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Spain","p5":3,"pp":23},{"id":17,"name":"Dixon Fung #3","t0":"Spain","p0":6,"t1":"France","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Belgium","p5":0,"pp":21},{"id":18,"name":"Dixon Fung #4","t0":"Belgium","p0":0,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"France","p5":3,"pp":18},{"id":19,"name":"Eddie Lau #1","t0":"Belgium","p0":0,"t1":"Germany","p1":3,"t2":"England","p2":1,"t3":"Ukraine","p3":0,"t4":"Wales","p4":6,"t5":"Austria","p5":0,"pp":10},{"id":20,"name":"Eddie Lau #2","t0":"Belgium","p0":0,"t1":"Germany","p1":3,"t2":"England","p2":1,"t3":"Ukraine","p3":0,"t4":"N_Ireland","p4":0,"t5":"Austria","p5":0,"pp":4},{"id":21,"name":"Eddie Lau #3","t0":"England","p0":2,"t1":"Belgium","p1":0,"t2":"Switzerland","p2":4,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Germany","p5":3,"pp":20},{"id":22,"name":"Ray Leung","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"Portugal","p2":0,"t3":"Turkey","p3":0,"t4":"Wales","p4":6,"t5":"England","p5":1,"pp":16},{"id":23,"name":"Kevin Luo #1","t0":"France","p0":6,"t1":"Belgium","p1":0,"t2":"England","p2":1,"t3":"Turkey","p3":0,"t4":"Wales","p4":6,"t5":"Spain","p5":3,"pp":16},{"id":24,"name":"Kevin Luo #2","t0":"Belgium","p0":0,"t1":"Germany","p1":3,"t2":"Italy","p2":4,"t3":"Croatia","p3":5,"t4":"Czech","p4":0,"t5":"England","p5":1,"pp":13},{"id":25,"name":"Kevin Luo #3","t0":"England","p0":2,"t1":"France","p1":3,"t2":"Italy","p2":4,"t3":"Turkey","p3":0,"t4":"Wales","p4":6,"t5":"Germany","p5":3,"pp":18},{"id":26,"name":"Kevin Luo #4","t0":"Germany","p0":6,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Turkey","p3":0,"t4":"Czech","p4":0,"t5":"France","p5":3,"pp":13},{"id":27,"name":"Abby Mak","t0":"Germany","p0":6,"t1":"Belgium","p1":0,"t2":"Italy","p2":4,"t3":"Ukraine","p3":0,"t4":"Sweden","p4":2,"t5":"Spain","p5":3,"pp":15},{"id":28,"name":"Gary Chu #1","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"Portugal","p2":0,"t3":"Hungary","p3":0,"t4":"Sweden","p4":2,"t5":"England","p5":1,"pp":12},{"id":29,"name":"Gary Chu #2","t0":"England","p0":2,"t1":"Germany","p1":3,"t2":"Italy","p2":4,"t3":"Poland","p3":5,"t4":"Russia","p4":2,"t5":"France","p5":3,"pp":19},{"id":30,"name":"Gary Chu #3","t0":"Germany","p0":6,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Romania","p3":0,"t4":"Sweden","p4":2,"t5":"Belgium","p5":0,"pp":12},{"id":31,"name":"Gary Chu #4","t0":"England","p0":2,"t1":"Belgium","p1":0,"t2":"Italy","p2":4,"t3":"Poland","p3":5,"t4":"Slovakia","p4":0,"t5":"Germany","p5":3,"pp":14},{"id":32,"name":"Tze Fai Chong #1","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"Portugal","p2":0,"t3":"Poland","p3":5,"t4":"Sweden","p4":2,"t5":"Russia","p5":2,"pp":18},{"id":33,"name":"Tze Fai Chong #2","t0":"Spain","p0":6,"t1":"Germany","p1":3,"t2":"Italy","p2":4,"t3":"Turkey","p3":0,"t4":"Russia","p4":2,"t5":"France","p5":3,"pp":18},{"id":34,"name":"Kit Chang #1","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"Portugal","p2":0,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"England","p5":1,"pp":21},{"id":35,"name":"Kit Chang #2","t0":"Germany","p0":6,"t1":"France","p1":3,"t2":"England","p2":1,"t3":"Croatia","p3":5,"t4":"Russia","p4":2,"t5":"Portugal","p5":0,"pp":17},{"id":36,"name":"Wilton Lee","t0":"Germany","p0":6,"t1":"Belgium","p1":0,"t2":"Portugal","p2":0,"t3":"Turkey","p3":0,"t4":"Slovakia","p4":0,"t5":"Spain","p5":3,"pp":9},{"id":37,"name":"Frankie Tong","t0":"France","p0":6,"t1":"Germany","p1":3,"t2":"Portugal","p2":0,"t3":"Ukraine","p3":0,"t4":"Russia","p4":2,"t5":"Belgium","p5":0,"pp":11},{"id":38,"name":"Alan Ng","t0":"England","p0":2,"t1":"Germany","p1":3,"t2":"Italy","p2":4,"t3":"Turkey","p3":0,"t4":"Russia","p4":2,"t5":"Belgium","p5":0,"pp":11},{"id":39,"name":"On","t0":"Spain","p0":6,"t1":"Germany","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Belgium","p5":0,"pp":21},{"id":40,"name":"Wilson","t0":"Belgium","p0":0,"t1":"Spain","p1":3,"t2":"England","p2":1,"t3":"Poland","p3":5,"t4":"Wales","p4":6,"t5":"Germany","p5":3,"pp":18}]';
+var allEntriesJson = '[{"id":0,"name":"Ray Liang","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0}]';
 	
 epool.teams = {};
 epool.policy = {};
@@ -26,18 +26,24 @@ epool.entry = {
 	p4: 0,
 	t5: "",
 	p5: 0,
+	t6: "",
+	p6: 0,
+	t7: "",
+	p7: 0,
+	t8: "",
+	p8: 0,
 	pp: 0
 }
 epool.currentId = 0;
 epool.nextId = epool.entries.length;
-
 epool.maxPoint = 0;
+epool.MURank = "1";
 
 epool.init = function () {
 	epool.teams = JSON.parse(teamsJson);
 	epool.policy = JSON.parse(policyJson);
 	//epool.loadData('./data/matches.json');
-	epool.matches = JSON.parse(matchesJson);
+    //epool.matches = JSON.parse(matchesJson);
 };
 
 epool.loadData = function($url) {
@@ -46,44 +52,42 @@ epool.loadData = function($url) {
       dataType: 'json',
       cache: true,
       async: true,      // avoid XMLHttpRequest request within the main thread
-      success: function(data) {
-        epool.matches = data;
+      success: function (data) {
+          epool.matches = data;
       },
       error: function(xhr, status, err) {
         console.error($url, status, err.toString());
       }
-    });
+	});
 }
 
-epool.calc = function(team) {
+epool.calc = function(team, weight) {
 	var point = 0;
-	var category = epool.categoryOfTeam(team);
-	
-	if (!category) {
-		console.error(team + " is not in EURO 2016");
+	//console.log("TeamCode is %s and point is %d", team, weight);
+	if (!epool.isTeamExist(team)) {
+		console.error(team + " is not in Final 8 teams");
 		return false;
 	}
 	
 	for (var i = 0; i < epool.matches.length; i++) { 
 		if (team === epool.matches[i].teamName) {
-			if (epool.matches[i].result === 'w') 
-				point += epool.policy[category-1].policy[epool.matches[i].round].point.w;
-			else if (epool.matches[i].result === 't') 
-				point += epool.policy[category-1].policy[epool.matches[i].round].point.t;
-				
-			if (epool.matches[i].score >= 3) point++;
+		    if (epool.matches[i].result === 'w') {
+		        point += weight * 2;
+		        if (epool.matches[i].round === 2 && weight === 8) point += 10;
+		    }
+		    else if (epool.matches[i].result === 't')
+		        point += weight;
 		}
+
 	}
 	
 	return point;
 }
 
-epool.categoryOfTeam = function(team) {
+epool.isTeamExist = function(team) {
 	for (var i = 0; i < epool.teams.length; i++) { 
-		for (var j = 0; j < epool.teams[i].teams.length; j++) {
-			if (team === epool.teams[i].teams[j].name) {
-				return epool.teams[i].category;
-			}
+		if (team === epool.teams[i].code) {
+			return true;
 		}
 	}
 	return false;
@@ -105,22 +109,33 @@ epool.setEntryValue = function() {
 	epool.entry.t3 = $('#sel-cat3').val();
 	epool.entry.t4 = $('#sel-cat4').val();
 	epool.entry.t5 = $('#sel-cat5').val();
+	epool.entry.t6 = $('#sel-cat6').val();
+	epool.entry.t7 = $('#sel-cat7').val();
+	epool.entry.t8 = $('#sel-cat8').val();
 	
 	// the point relevant to team
-	epool.entry.p0 = epool.calc(epool.entry.t0) * 2;
-	epool.entry.p1 = epool.calc(epool.entry.t1);
-	epool.entry.p2 = epool.calc(epool.entry.t2);
-	epool.entry.p3 = epool.calc(epool.entry.t3);
-	epool.entry.p4 = epool.calc(epool.entry.t4);
-	epool.entry.p5 = epool.calc(epool.entry.t5);
-	epool.entry.pp = epool.entry.p0 + epool.entry.p1 + epool.entry.p2 + epool.entry.p3 + epool.entry.p4 + epool.entry.p5;
+	epool.entry.p0 = epool.calc(epool.entry.t0, 8);
+	epool.entry.p1 = epool.calc(epool.entry.t1, 7);
+	epool.entry.p2 = epool.calc(epool.entry.t2, 6);
+	epool.entry.p3 = epool.calc(epool.entry.t3, 5);
+	epool.entry.p4 = epool.calc(epool.entry.t4, 4);
+	epool.entry.p5 = epool.calc(epool.entry.t5, 3);
+	epool.entry.p6 = epool.calc(epool.entry.t6, 2);
+	epool.entry.p7 = epool.calc(epool.entry.t7, 1);
+	if (epool.entry.t8 === epool.MURank) epool.entry.p8 = 10;
+	//epool.entry.p8 = epool.calc2(epool.entry.t8);
+	epool.entry.pp = epool.entry.p0 + epool.entry.p1 + epool.entry.p2 + epool.entry.p3 + epool.entry.p4
+                   + epool.entry.p5 + epool.entry.p6 + epool.entry.p7 + epool.entry.p8;
 	    	
-	$('#stPoint').val(epool.entry.p0);
+	$('#cat0Point').val(epool.entry.p0);
 	$('#cat1Point').val(epool.entry.p1);
 	$('#cat2Point').val(epool.entry.p2);
 	$('#cat3Point').val(epool.entry.p3);
 	$('#cat4Point').val(epool.entry.p4);
-	$('#atPoint').val(epool.entry.p5);
+	$('#cat5Point').val(epool.entry.p5);
+	$('#cat6Point').val(epool.entry.p6);
+	$('#cat7Point').val(epool.entry.p7);
+	$('#cat8Point').val(epool.entry.p8);
 	$('#totalPoint').val(epool.entry.pp);
 }
 
@@ -131,6 +146,9 @@ epool.updateCurrentEntryFromBuffer = function(i) {
 	epool.entries[i].t3 = epool.entry.t3;
 	epool.entries[i].t4 = epool.entry.t4;
 	epool.entries[i].t5 = epool.entry.t5;
+	epool.entries[i].t6 = epool.entry.t6;
+	epool.entries[i].t7 = epool.entry.t7;
+	epool.entries[i].t8 = epool.entry.t8;
 	
 	epool.entries[i].p0 = epool.entry.p0;
 	epool.entries[i].p1 = epool.entry.p1;
@@ -138,6 +156,9 @@ epool.updateCurrentEntryFromBuffer = function(i) {
 	epool.entries[i].p3 = epool.entry.p3;
 	epool.entries[i].p4 = epool.entry.p4;
 	epool.entries[i].p5 = epool.entry.p5;
+	epool.entries[i].p6 = epool.entry.p6;
+	epool.entries[i].p7 = epool.entry.p7;
+	epool.entries[i].p8 = epool.entry.p8;
 	epool.entries[i].pp = epool.entry.pp;
 }
 
@@ -166,6 +187,9 @@ epool.setSelectOptions = function(entry) {
 	$('#sel-cat3').val(entry.t3);
 	$('#sel-cat4').val(entry.t4);
 	$('#sel-cat5').val(entry.t5);
+	$('#sel-cat6').val(entry.t6);
+	$('#sel-cat7').val(entry.t7);
+	$('#sel-cat8').val(entry.t8);
 }
 
 epool.resetSelectOptions = function() {
@@ -177,6 +201,7 @@ epool.resetSelectOptions = function() {
 	$('#sel-cat5').val('ZZ');
 	$('#sel-cat6').val('ZZ');
 	$('#sel-cat7').val('ZZ');
+	$('#sel-cat8').val('ZZ');
 }
 
 epool.isEntryExist = function(name) {
@@ -192,6 +217,8 @@ epool.getMaxPoint = function() {
 			epool.maxPoint = epool.entries[i].pp;
 	}
 	$('#btnRank > span.badge').text(epool.maxPoint);
+
+	return epool.maxPoint;
 }
 
 epool.updateAllEntriesValue = function() {
@@ -290,180 +317,168 @@ epool.rank = function() {
 	epool.getMaxPoint();
 }
 
-$(document).ready(function () {
-    //epool.init();
-    
-    $('#btnCalc').on('click', function() {
-    	epool.setEntryValue();
-    	
-    	//epool.setLocalStorage(epool.entry);
+epool.initElementsEvent = function () {
+    $('#btnCalc').on('click', function () {
+        epool.setEntryValue();
     });
-    
-    $('#btnReset').on('click', function() {
-    	epool.resetSelectOptions();
+
+    $('#btnReset').on('click', function () {
+        epool.resetSelectOptions();
     });
-    
-    $('#btnSave').on('click', function() {
-    	var name = $('#inputEntryName').val().trim();
-    	if (name !== "" && epool.isEntryExist(name) !== true) {
-    		epool.entry.name = name;
-    		epool.entry.id = epool.nextId;
-    		epool.setEntryValue();		// set buffer entry's value
-    		var newEntry = $.extend(true, {}, epool.entry);
-    		epool.entries.push(newEntry);
-    		
-    		epool.nextId = epool.entries.length;
-    		epool.currentId = epool.nextId - 1;
-    		
-    		// update Local Storage
-    		epool.setLocalStorage(epool.entries);	
-    		
-    		// update entry selection's option
-    		$("#sel-entry").append($('<option>', {
+
+    $('#btnRank').on('click', function () {
+        epool.rank();
+        //Materialize.toast('The function is in developing, it will be released in next version', 2500);
+    });
+
+    $('#btnSave').on('click', function () {
+        var name = $('#inputEntryName').val().trim();
+        if (name !== "" && epool.isEntryExist(name) !== true) {
+            epool.entry.name = name;
+            epool.entry.id = epool.nextId;
+            epool.setEntryValue();		// set buffer entry's value
+            var newEntry = $.extend(true, {}, epool.entry);
+            epool.entries.push(newEntry);
+
+            epool.nextId = epool.entries.length;
+            epool.currentId = epool.nextId - 1;
+
+            // update Local Storage
+            epool.setLocalStorage(epool.entries);
+
+            // update entry selection's option
+            $("#sel-entry").append($('<option>', {
                 value: epool.entries[epool.currentId].id,
                 text: epool.entries[epool.currentId].name
             }));
-            
+
             // point to new entry
             $("#sel-entry").val(epool.currentId);
-            
+
             Materialize.toast('entry of "' + epool.entries[epool.currentId].name + '" Saved', 3000);
-    	}
-    	else {
-    		if (name === "")
-    			Materialize.toast('A name of the entry is required', 2500);
-    		else if (epool.isEntryExist(name) === true)
-    			Materialize.toast('An entry with same name is alreay exist', 2500);
-    	}
+        }
+        else {
+            if (name === "")
+                Materialize.toast('A name of the entry is required', 2500);
+            else if (epool.isEntryExist(name) === true)
+                Materialize.toast('An entry with same name is alreay exist', 2500);
+        }
     });
-    
-    $('#btnDele').on('click', function() {
-    	if (epool.entries.length > 0) {
-    		var arrDeletedEntries = epool.entries.splice(epool.currentId, 1);
-    		
-    		if (epool.entries.length !== 0) {
-	    		if (parseInt(epool.currentId) === epool.entries.length) 
-	    			epool.currentId = epool.currentId - 1 ;	// if deleted the last one, offset -1
-	    		else {
-		    		for (var i = epool.currentId; i < epool.entries.length; i++) {
-		    			epool.entries[i].id = i;	
-		    		}
-	    		}
-	    		
-	    		// refresh the entry selection's options
-	    		var s = $("#sel-entry");
-	    		s.empty();
-	    		for (var i = 0; i < epool.entries.length; i++) {
-	    			s.append($('<option>', {
-		                value: epool.entries[i].id,
-		                text:  epool.entries[i].name
-		            }));	
-	    		}
-	    		
-	    		// point to current entry
-	    		$('#sel-entry').val(epool.currentId);
-	    		$('#sel-entry').trigger('change');
-	    	}
-	    	else {
-	    		$("#sel-entry").empty();
-	    		$("#sel-entry").val('');
-	    		epool.nextId = 0;
-	    		epool.removeLocalStorage();
-	    	}
-	    	
-	    	Materialize.toast('entry of "' + arrDeletedEntries[0].name + '" Deleted', 3000);
-    	}
-    	else
-    		Materialize.toast('You don\'t save any entry yet', 2500);
+
+    $('#btnDele').on('click', function () {
+        if (epool.entries.length > 0) {
+            var arrDeletedEntries = epool.entries.splice(epool.currentId, 1);
+
+            if (epool.entries.length !== 0) {
+                if (parseInt(epool.currentId) === epool.entries.length)
+                    epool.currentId = epool.currentId - 1;	// if deleted the last one, offset -1
+                else {
+                    for (var i = epool.currentId; i < epool.entries.length; i++) {
+                        epool.entries[i].id = i;
+                    }
+                }
+
+                // refresh the entry selection's options
+                var s = $("#sel-entry");
+                s.empty();
+                for (var i = 0; i < epool.entries.length; i++) {
+                    s.append($('<option>', {
+                        value: epool.entries[i].id,
+                        text: epool.entries[i].name
+                    }));
+                }
+
+                // point to current entry
+                $('#sel-entry').val(epool.currentId);
+                $('#sel-entry').trigger('change');
+            }
+            else {
+                $("#sel-entry").empty();
+                $("#sel-entry").val('');
+                epool.nextId = 0;
+                epool.removeLocalStorage();
+            }
+
+            Materialize.toast('entry of "' + arrDeletedEntries[0].name + '" Deleted', 3000);
+        }
+        else
+            Materialize.toast('You don\'t save any entry yet', 2500);
     });
-    
-    $('#btnRank').on('click', function() {
-    	epool.rank();
-    	//Materialize.toast('The function is in developing, it will be released in next version', 2500);
-    });
-    
+}
+
+epool.initEntryLoading = function () {
+    // load entries from json and push them in entry array
     var entriesObj = {};
     if (localStorage.getItem("entriesJson"))
-		entriesObj = JSON.parse(localStorage.getItem("entriesJson"));
-	else
-		entriesObj = JSON.parse(allEntriesJson);
+        entriesObj = JSON.parse(localStorage.getItem("entriesJson"));
+    else
+        entriesObj = JSON.parse(allEntriesJson);
 
-	for (var i = 0; i < entriesObj.length; i++) {
-		epool.entries.push(entriesObj[i]);
-	}
-	epool.currentId = 0;
-	epool.nextId = epool.entries.length;
+    for (var i = 0; i < entriesObj.length; i++) {
+        epool.entries.push(entriesObj[i]);
+    }
+    epool.currentId = 0;
+    epool.nextId = epool.entries.length;  // will be the new entry's id
 
-	//setTimeout(function () { 	// defer to calc wait for matches data loading
-		// update all entries' value
-		epool.updateAllEntriesValue();
-		// sort 
-		epool.quickSort("pp", epool.entries);
-		// reverse as descending order
-		epool.entries.reverse();
-		// adjust the id according to rank
-		epool.updateIDinEntries();
-		// load entries to selection's options
-		epool.renderEntrieSelection(epool.entries);
-		// save entries object to local storage    		
-		epool.setLocalStorage(epool.entries);
-		
-		// add changeListener to selection element
-		$("#sel-entry").on('change', function() {
-    		epool.currentId = $(this).val();
-    		epool.setSelectOptions(epool.entries[epool.currentId]);
-    		
-    		epool.setEntryValue();
-    		epool.updateCurrentEntryFromBuffer(epool.currentId);
-    		
-    		epool.setLocalStorage(epool.entries);
-    	});
-		
-		// point to the first entry
-		epool.setSelectOptions(epool.entries[0]);
-		//$("#sel-entry").trigger('change'); 
-		epool.getMaxPoint(); 
-	//}, 600);
-/*
-	// promise load matches data done
-	$.getJSON('./data/matches.json').success(function(data) {
-		epool.matches = data;	
-    }).then(
-        function () {
-            // update all entries' value
-			epool.updateAllEntriesValue();
-			// sort 
-			epool.quickSort("pp", epool.entries);
-			// reverse as descending order
-			epool.entries.reverse();
-			epool.updateIDinEntries();
-			// load entries to selection's options
-			epool.renderEntrieSelection(epool.entries);
-			// save entries object to local storage    		
-			epool.setLocalStorage(epool.entries);
-			console.info('then2');
-        }
-    ).then(
-    	function () {			
-			// add changeListener to selection element
-			$("#sel-entry").on('change', function() {
-	    		epool.currentId = $(this).val();
-	    		epool.setSelectOptions(epool.entries[epool.currentId]);
-	    		
-	    		epool.setEntryValue();
-	    		epool.updateCurrentEntryFromBuffer(epool.currentId);
-	    		
-	    		epool.setLocalStorage(epool.entries);
-	    	});
-			
-			// point to the first entry
-			epool.setSelectOptions(epool.entries[0]);
-			$("#sel-entry").trigger('change'); 
-			epool.getMaxPoint(); 
-			console.info('then3');
-        }
-    );
-*/
-	
-	$('#btnReset').trigger('click');
+    // update all entries' value
+    epool.updateAllEntriesValue();
+    // sort 
+    epool.quickSort("pp", epool.entries);
+    // reverse as descending order
+    epool.entries.reverse();
+    // adjust the id according to rank
+    epool.updateIDinEntries();
+    // load entries to selection's options
+    epool.renderEntrieSelection(epool.entries);
+    // save entries object to local storage    		
+    epool.setLocalStorage(epool.entries);
+
+    // add changeListener to selection element
+    $("#sel-entry").on('change', function () {
+        epool.currentId = $(this).val();
+        epool.setSelectOptions(epool.entries[epool.currentId]);
+
+        $('#cat0Point').val(epool.entries[epool.currentId].p0);
+        $('#cat1Point').val(epool.entries[epool.currentId].p1);
+        $('#cat2Point').val(epool.entries[epool.currentId].p2);
+        $('#cat3Point').val(epool.entries[epool.currentId].p3);
+        $('#cat4Point').val(epool.entries[epool.currentId].p4);
+        $('#cat5Point').val(epool.entries[epool.currentId].p5);
+        $('#cat6Point').val(epool.entries[epool.currentId].p6);
+        $('#cat7Point').val(epool.entries[epool.currentId].p7);
+        $('#cat8Point').val(epool.entries[epool.currentId].p8);
+        $('#totalPoint').val(epool.entries[epool.currentId].pp);
+    });
+
+    // point to the first entry
+    epool.setSelectOptions(epool.entries[0]);
+
+    epool.getMaxPoint();
+
+    return epool.maxPoint;
+}
+
+$(document).ready(function () {
+    epool.init();
+    
+    epool.initElementsEvent();
+
+    var promise = new Promise(function (resolve, reject) {
+        resolve(1);
+    });
+    
+    //promise.then(function (data) {
+    //    console.log("promise 1 with data1 %d", data);
+    //    return epool.init();
+    //}).
+    $.getJSON('./data/matches.json').success(function(data) {
+        epool.matches = data;
+        return epool.matches
+    }).then(function (data) {
+        console.log(data);
+        return epool.initEntryLoading();
+    }).then(function (data) {
+        console.log("promise 3 with data %d", data);
+        epool.rank();
+    });;
 });
