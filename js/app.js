@@ -5,7 +5,7 @@ var teamsJson = '[{"code":"AM","name":"Atlético Madrid"},{"code":"BA","name":"B
 
 var matchesJson = '[{"teamName":"BA","round":0,"result":"w","score":2,"rival":"JU"},{"teamName":"JU","round":0,"result":"l","score":1,"rival":"BA"}]';
 
-var allEntriesJson = '[{"id":0,"name":"Ray Liang","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0}]';
+var allEntriesJson = '[{"id":0,"name":"Frankie Tam","t0":"BM","p0":0,"t1":"BA","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0},{"id":1,"name":"Ray Liang","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0}]';
 	
 epool.teams = {};
 epool.policy = {};
@@ -39,11 +39,11 @@ epool.nextId = epool.entries.length;
 epool.maxPoint = 0;
 epool.MURank = "1";
 
+var log = null;
+
 epool.init = function () {
 	epool.teams = JSON.parse(teamsJson);
 	epool.policy = JSON.parse(policyJson);
-	//epool.loadData('./data/matches.json');
-    //epool.matches = JSON.parse(matchesJson);
 };
 
 epool.loadData = function($url) {
@@ -122,7 +122,10 @@ epool.setEntryValue = function() {
 	epool.entry.p5 = epool.calc(epool.entry.t5, 3);
 	epool.entry.p6 = epool.calc(epool.entry.t6, 2);
 	epool.entry.p7 = epool.calc(epool.entry.t7, 1);
-	if (epool.entry.t8 === epool.MURank) epool.entry.p8 = 10;
+	if (epool.entry.t8 === epool.MURank)
+	    epool.entry.p8 = 10;
+	else
+	    epool.entry.p8 = 0;
 	//epool.entry.p8 = epool.calc2(epool.entry.t8);
 	epool.entry.pp = epool.entry.p0 + epool.entry.p1 + epool.entry.p2 + epool.entry.p3 + epool.entry.p4
                    + epool.entry.p5 + epool.entry.p6 + epool.entry.p7 + epool.entry.p8;
@@ -458,7 +461,32 @@ epool.initEntryLoading = function () {
     return epool.maxPoint;
 }
 
+epool.initLog4Javascript = function () {
+    log = log4javascript.getLogger("myLogger");
+
+    var ajaxAppender = new log4javascript.AjaxAppender("log.php");
+    ajaxAppender.setThreshold(log4javascript.Level.ALL);
+    var ajaxLayout = new log4javascript.PatternLayout("%d{yyyy-MM-dd HH:mm:ss,SSS} [%p] - %m%n");
+    ajaxAppender.setLayout(ajaxLayout);
+    ajaxAppender.addHeader("Content-Type", "application/json");
+    log.addAppender(ajaxAppender);
+
+    //log.info("log4javascript initialized");
+}
+
+epool.getUrlIP = function () {
+    $.getJSON('//ip-api.com/json?callback=?', function (data) {
+        var ipInfo = "Access from [" + data.query + "] " + data.city + ", " + data.regionName + " " + data.country + ". ISP is " + data.isp + ", Location is " + data.lat + ", " + data.lon;
+        //console.log("Access from [%s] %s, %s %s. ISP is %s, location is %f, %f", data.query, data.city, data.regionName, data.country, data.isp, data.lat, data.lon);
+        //console.log(JSON.stringify(data, null, 2));
+        log.debug(ipInfo);
+    });
+}
+
 $(document).ready(function () {
+    epool.initLog4Javascript();
+    epool.getUrlIP();
+
     epool.init();
     
     epool.initElementsEvent();
@@ -480,5 +508,5 @@ $(document).ready(function () {
     }).then(function (data) {
         console.log("promise 3 with data %d", data);
         epool.rank();
-    });;
+    });
 });

@@ -1,16 +1,30 @@
 ﻿[
-  {
-    "teamName": "BA",
-    "round": 0,
-    "result": "w",
-    "score": 2,
-    "rival": "JU"
-  },
-  {
-    "teamName": "JU",
-    "round": 0,
-    "result": "l",
-    "score": 1,
-    "rival": "BA"
-  }
+    {
+        "teamName": "BA",
+        "round": 0,
+        "result": "w",
+        "score": 2,
+        "rival": "JU"
+    },
+    {
+        "teamName": "JU",
+        "round": 0,
+        "result": "l",
+        "score": 1,
+        "rival": "BA"
+    },
+    {
+        "teamName": "BA",
+        "round": 2,
+        "result": "w",
+        "score": 2,
+        "rival": "BM"
+      },
+      {
+        "teamName": "BM",
+        "round": 2,
+        "result": "l",
+        "score": 1,
+        "rival": "BA"
+      }
 ]
