@@ -29,10 +29,16 @@ class logReceiver
     {
         $max_size = 1000000;
         $log_filename = "access.log";
-        if (file_exists($log_filename) and (abs(filesize($log_filename)) > $max_size)) {
-            unlink($log_filename);
-        }
-        file_put_contents($log_filename, $log_content."\r\n", FILE_APPEND);
+        
+        try {
+	        if (file_exists($log_filename) and (abs(filesize($log_filename)) > $max_size)) {
+	            //unlink($log_filename);
+	            rename($log_filename, $log_filename.".".date('Y-m-d'));
+	        }
+	        file_put_contents($log_filename, $log_content."\r\n", FILE_APPEND);
+	      } catch (Exception $e) {
+	      	echo 'Caught exception: '. $e->getmessage(). "\n";
+	      }
     }
 }
 ?>

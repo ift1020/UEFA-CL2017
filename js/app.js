@@ -412,8 +412,10 @@ epool.initElementsEvent = function () {
 epool.initEntryLoading = function () {
     // load entries from json and push them in entry array
     var entriesObj = {};
-    if (localStorage.getItem("entriesJson"))
+    if (localStorage.getItem("entriesJson")) {
         entriesObj = JSON.parse(localStorage.getItem("entriesJson"));
+        if (entriesObj.length > 2) entriesObj = JSON.parse(allEntriesJson);
+    }
     else
         entriesObj = JSON.parse(allEntriesJson);
 
