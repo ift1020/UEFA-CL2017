@@ -3,9 +3,9 @@
 var teamsJson = '[{"code":"AM","name":"Atlético Madrid"},{"code":"BA","name":"Barcelona"},{"code":"BM","name":"Bayern Munich"},{"code":"DO","name":"Dortmund"},{"code":"JU","name":"Juventus"},{"code":"LC","name":"Leicester City"},{"code":"MO","name":"Monaco"},{"code":"RM","name":"Real Madrid"}]',
 	policyJson = '[{"round":0,"point":{"w":2,"t":1,"l":0}},{"round":1,"point":{"w":2,"t":1,"l":0}},{"round":2,"point":{"w":2,"t":1,"l":0}}]';
 
-var matchesJson = '[{"teamName":"BA","round":0,"result":"w","score":2,"rival":"JU"},{"teamName":"JU","round":0,"result":"l","score":1,"rival":"BA"}]';
+var matchesJson = '[{"teamName":"JU","round":0,"result":"t","score":0,"rival":"BA"},{"teamName":"BA","round":0,"result":"t","score":0,"rival":"JU"},{"teamName":"DO","round":0,"result":"t","score":0,"rival":"MO"},{"teamName":"MO","round":0,"result":"t","score":0,"rival":"DO"}]';
 
-var allEntriesJson = '[{"id":0,"name":"Frankie Tam","t0":"BM","p0":0,"t1":"BA","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0},{"id":1,"name":"Ray Liang","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0}]';
+var allEntriesJson = '[{"id":0,"name":"Frankie Tong","t0":"BA","p0":0,"t1":"RM","p1":0,"t2":"LC","p2":0,"t3":"MO","p3":0,"t4":"BM","p4":0,"t5":"AM","p5":0,"t6":"DO","p6":0,"t7":"JU","p7":0,"t8":"2","p8":0,"pp":0},{"id":1,"name":"Ray Liang","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"AM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"RM","p5":0,"t6":"LC","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0},{"id":2,"name":"Fai #1","t0":"BA","p0":0,"t1":"MO","p1":0,"t2":"RM","p2":0,"t3":"AM","p3":0,"t4":"BM","p4":0,"t5":"JU","p5":0,"t6":"DO","p6":0,"t7":"LC","p7":0,"t8":"1","p8":0,"pp":0},{"id":3,"name":"Fai #2","t0":"RM","p0":0,"t1":"MO","p1":0,"t2":"BA","p2":0,"t3":"AM","p3":0,"t4":"BM","p4":0,"t5":"JU","p5":0,"t6":"DO","p6":0,"t7":"LC","p7":0,"t8":"1","p8":0,"pp":0},{"id":4,"name":"Kit","t0":"BA","p0":0,"t1":"RM","p1":0,"t2":"BM","p2":0,"t3":"MO","p3":0,"t4":"DO","p4":0,"t5":"AM","p5":0,"t6":"JU","p6":0,"t7":"LC","p7":0,"t8":"3","p8":0,"pp":0},{"id":5,"name":"Eddie $6","t0":"RM","p0":0,"t1":"BM","p1":0,"t2":"BA","p2":0,"t3":"MO","p3":0,"t4":"LC","p4":0,"t5":"AM","p5":0,"t6":"DO","p6":0,"t7":"JU","p7":0,"t8":"1","p8":0,"pp":0},{"id":6,"name":"Joe Liu","t0":"RM","p0":0,"t1":"BM","p1":0,"t2":"BA","p2":0,"t3":"JU","p3":0,"t4":"DO","p4":0,"t5":"AM","p5":0,"t6":"MO","p6":0,"t7":"LC","p7":0,"t8":"3","p8":0,"pp":0},{"id":7,"name":"Simon Leung","t0":"BM","p0":0,"t1":"RM","p1":0,"t2":"BA","p2":0,"t3":"JU","p3":0,"t4":"DO","p4":0,"t5":"AM","p5":0,"t6":"LC","p6":0,"t7":"MO","p7":0,"t8":"1","p8":0,"pp":0},{"id":8,"name":"Albert #1","t0":"BM","p0":0,"t1":"BA","p1":0,"t2":"RM","p2":0,"t3":"DO","p3":0,"t4":"AM","p4":0,"t5":"JU","p5":0,"t6":"LC","p6":0,"t7":"MO","p7":0,"t8":"1","p8":0,"pp":0},{"id":9,"name":"Albert #2","t0":"AM","p0":0,"t1":"JU","p1":0,"t2":"BM","p2":0,"t3":"RM","p3":0,"t4":"BA","p4":0,"t5":"DO","p5":0,"t6":"MO","p6":0,"t7":"LC","p7":0,"t8":"2","p8":0,"pp":0},{"id":10,"name":"Albert #3","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"RM","p2":0,"t3":"AM","p3":0,"t4":"DO","p4":0,"t5":"LC","p5":0,"t6":"JU","p6":0,"t7":"MO","p7":0,"t8":"1","p8":0,"pp":0},{"id":11,"name":"Kevin","t0":"BM","p0":0,"t1":"BA","p1":0,"t2":"RM","p2":0,"t3":"JU","p3":0,"t4":"DO","p4":0,"t5":"AM","p5":0,"t6":"MO","p6":0,"t7":"LC","p7":0,"t8":"2","p8":0,"pp":0},{"id":12,"name":"Wilton #1","t0":"RM","p0":0,"t1":"AM","p1":0,"t2":"JU","p2":0,"t3":"DO","p3":0,"t4":"BM","p4":0,"t5":"BA","p5":0,"t6":"MO","p6":0,"t7":"LC","p7":0,"t8":"1","p8":0,"pp":0},{"id":13,"name":"Wilton #2","t0":"BA","p0":0,"t1":"RM","p1":0,"t2":"AM","p2":0,"t3":"DO","p3":0,"t4":"LC","p4":0,"t5":"MO","p5":0,"t6":"JU","p6":0,"t7":"BM","p7":0,"t8":"1","p8":0,"pp":0},{"id":14,"name":"Sam #1","t0":"BA","p0":0,"t1":"BM","p1":0,"t2":"AM","p2":0,"t3":"RM","p3":0,"t4":"DO","p4":0,"t5":"JU","p5":0,"t6":"MO","p6":0,"t7":"LC","p7":0,"t8":"3","p8":0,"pp":0},{"id":15,"name":"Sam #2","t0":"BM","p0":0,"t1":"BA","p1":0,"t2":"RM","p2":0,"t3":"AM","p3":0,"t4":"DO","p4":0,"t5":"JU","p5":0,"t6":"MO","p6":0,"t7":"LC","p7":0,"t8":"3","p8":0,"pp":0}]';
 	
 epool.teams = {};
 epool.policy = {};
@@ -37,7 +37,12 @@ epool.entry = {
 epool.currentId = 0;
 epool.nextId = epool.entries.length;
 epool.maxPoint = 0;
-epool.MURank = "1";
+epool.MURank = "0";     // TO BE UPDATED
+epool.chartData = [];
+epool.chartNode = {
+    name: "",
+    point: 0
+}
 
 var log = null;
 
@@ -318,6 +323,13 @@ epool.rank = function() {
 	epool.setSelectOptions(epool.entries[0]);
 	$("#sel-entry").trigger('change'); 
 	epool.getMaxPoint();
+
+	for (var i = 0, len = epool.entries.length; i < len; i++) {
+	    var node = $.extend(true, {}, epool.chartNode);
+	    node.name = epool.entries[i].name;
+	    node.point = epool.entries[i].pp;
+	    epool.chartData.push(node);
+	}
 }
 
 epool.initElementsEvent = function () {
@@ -412,11 +424,11 @@ epool.initElementsEvent = function () {
 epool.initEntryLoading = function () {
     // load entries from json and push them in entry array
     var entriesObj = {};
-    if (localStorage.getItem("entriesJson")) {
-        entriesObj = JSON.parse(localStorage.getItem("entriesJson"));
-        if (entriesObj.length > 2) entriesObj = JSON.parse(allEntriesJson);
-    }
-    else
+    //if (localStorage.getItem("entriesJson")) {
+    //    entriesObj = JSON.parse(localStorage.getItem("entriesJson"));
+    //    if (entriesObj.length > 2) entriesObj = JSON.parse(allEntriesJson);
+    //}
+    //else
         entriesObj = JSON.parse(allEntriesJson);
 
     for (var i = 0; i < entriesObj.length; i++) {
@@ -477,12 +489,25 @@ epool.initLog4Javascript = function () {
 }
 
 epool.getUrlIP = function () {
-    $.getJSON('//ip-api.com/json?callback=?', function (data) {
+    $.getJSON('http://ip-api.com/json', function (data) {
         var ipInfo = "Access from [" + data.query + "] " + data.city + ", " + data.regionName + " " + data.country + ". ISP is " + data.isp + ", Location is " + data.lat + ", " + data.lon;
         //console.log("Access from [%s] %s, %s %s. ISP is %s, location is %f, %f", data.query, data.city, data.regionName, data.country, data.isp, data.lat, data.lon);
         //console.log(JSON.stringify(data, null, 2));
         log.debug(ipInfo);
     });
+}
+
+epool.initChart = function () {
+    var x = d3.scaleLinear()
+        .domain([0, d3.max(epool.maxPoint)])
+        .range([0, 640]);
+
+    d3.select(".chart")
+      .selectAll("div")
+      .data(epool.chartData)
+      .enter().append("div")
+      .style("width", function (d) { return d.point*10 + "px"; })  // x(d) ???
+      .text(function (d) { return d.name + ": " + d.point; });
 }
 
 $(document).ready(function () {
@@ -510,5 +535,6 @@ $(document).ready(function () {
     }).then(function (data) {
         console.log("promise 3 with data %d", data);
         epool.rank();
+        epool.initChart();
     });
 });
