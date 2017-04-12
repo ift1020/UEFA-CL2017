@@ -43,6 +43,7 @@ epool.chartNode = {
     name: "",
     point: 0
 }
+epool.points = [];
 
 var log = null;
 
@@ -323,13 +324,17 @@ epool.rank = function() {
 	epool.setSelectOptions(epool.entries[0]);
 	$("#sel-entry").trigger('change'); 
 	epool.getMaxPoint();
-
+	
+	epool.points.length = 0;
+	epool.chartData.length = 0;
 	for (var i = 0, len = epool.entries.length; i < len; i++) {
 	    var node = $.extend(true, {}, epool.chartNode);
 	    node.name = epool.entries[i].name;
 	    node.point = epool.entries[i].pp;
+	    epool.points.push(node.point);
 	    epool.chartData.push(node);
 	}
+	epool.initChart();
 }
 
 epool.initElementsEvent = function () {
@@ -499,14 +504,14 @@ epool.getUrlIP = function () {
 
 epool.initChart = function () {
     var x = d3.scaleLinear()
-        .domain([0, d3.max(epool.maxPoint)])
-        .range([0, 640]);
+        .domain([0, d3.max(epool.points)])
+        .range([0, 320]);		// fit to minimal mobile width
 
     d3.select(".chart")
       .selectAll("div")
       .data(epool.chartData)
       .enter().append("div")
-      .style("width", function (d) { return d.point*10 + "px"; })  // x(d) ???
+      .style("width", function (d) { return x(d.point) + "px"; })  // x(d) ???
       .text(function (d) { return d.name + ": " + d.point; });
 }
 
@@ -535,6 +540,6 @@ $(document).ready(function () {
     }).then(function (data) {
         console.log("promise 3 with data %d", data);
         epool.rank();
-        epool.initChart();
+        
     });
 });
